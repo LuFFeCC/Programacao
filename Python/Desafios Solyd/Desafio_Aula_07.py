@@ -1,5 +1,7 @@
 #Exercicio: Escreva uma função que receça um objeto de coleção e retorna o valor do maior numero dentro dessa coleção.
 #Faça outra função que retorna o menor numero dessa coleção.
+#FernandoCosta
+#30/11/2021
 
 def maior_valor(lista):
         maior = 0
