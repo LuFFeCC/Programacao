@@ -32,14 +32,13 @@ password =  "teste123!!" #input(print("DIGITE A SENHA: "))
 print("Digite a sua rede Ex: 192.168.0")
 rede = input("REDE: ")
 
-for i in range(0,255):
+for i in range(0,255): #RANGE PARA VERIFICAR TODOS OS 255 IPS DA REDE
     ip = rede+'.'+str(i)
     ipsvalidos = myping(ip)
     
-    
-    if ipsvalidos == 0 :
+    if ipsvalidos == 0 :   #
 
-        os.system('mkdir D:\\REDE\\'+ ip)
+        os.system('mkdir D:\\REDE\\'+ ip) 
         
         resposta_funcao = windows_check(str(ip))
         if resposta_funcao == 0:
@@ -56,4 +55,3 @@ for i in range(0,255):
         ip_valido = open('ips_validos.txt','a')
         ip_valido.write(str(ip)+'\n')
         ip_valido.write(str(maquina)+'\n\n')
-
