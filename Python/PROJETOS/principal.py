@@ -9,15 +9,15 @@ def myping(host):         #FUNÇÃO PARA PINGAR HOSTS E VERIFICAR SE ESTÃO ATIV
 
 def windows_check(adress):     #FUNÇÃO PARA EXECUTAR A CONEXÃO E VERIFICAR SE A MAQUINA É WINDOWS OU LINUX
     parametro=0
-    parametro = 'paexec.exe \\\\'+adress+' -u MIXHC\\fernando -p @mix080117 whoami' 
+    parametro = 'paexec.exe \\\\'+adress+' -u DOMINIO\\USER -p PASSWORD whoami' 
     resposta_windows = os.system(parametro)
     return resposta_windows
 
 def windows_list(adress):     #FUNÇÃO PARA EXECUTAR A CONEXÃO E COMANDOS NAS MAQUINAS WINDOWS
     parametro=0
     #LISTANDO PROGRAMAS INSTALADOS NAS MAQUINAS E COLOCANDO DENTRO DE UM ARQUIVO NA MAQUINA CENTRAL
-    parametro = 'paexec.exe \\\\'+adress+' -u MIXHC\\fernando -p @mix080117 copy NUL D:/REDE/'+ip+'/programas_instalados.txt'
-    parametro = 'paexec.exe \\\\'+adress+' -u MIXHC\\fernando -p @mix080117 wmic product get name > D:/REDE/'+ip+'/programas_instalados.txt' 
+    parametro = 'paexec.exe \\\\'+adress+' -u DOMINIO\\USER -p PASSWORD copy NUL D:/REDE/'+ip+'/programas_instalados.txt'
+    parametro = 'paexec.exe \\\\'+adress+' -u DOMINIO\\USER -p PASSWORD wmic product get name > D:/REDE/'+ip+'/programas_instalados.txt' 
     resposta_windows = os.system(parametro)
     return resposta_windows
 
@@ -25,8 +25,8 @@ ipsvalidos = []   # LISTA PARA GUARDAR OS IPS VALIDOS, E COLOCAR NO ARQUIVO IPS_
 ips_tratamento = [] #LISTA PARA GUARDAR OS IPS
 teste = []
 
-username = "root" #input(print("DIGITE O USUÁRIO ADMINISTRADOR DA REDE: "))
-password =  "teste123!!" #input(print("DIGITE A SENHA: "))
+username = "USER" #input(print("DIGITE O USUÁRIO ADMINISTRADOR DA REDE: "))
+password =  "PASSWORD" #input(print("DIGITE A SENHA: "))
 
 print("Digite a sua rede Ex: 192.168.0")
 rede = input("REDE: ")
