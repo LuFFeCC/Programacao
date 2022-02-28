@@ -8,15 +8,6 @@ def myping(host):         #FUNÇÃO PARA PINGAR HOSTS E VERIFICAR SE ESTÃO ATIV
     resposta_ping = (os.system('ping -n 1 ' +host ))
     return resposta_ping
 
-def ssh_connect(command):   #FUNÇÃO PARA SE CONECTAR AO LINUX POR SSH
-    ssh = paramiko.SSHClient()
-    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect(hostname=adress, username=username, password=password)
-    stdin, stdout, stderr, = ssh.exec_command(command)
-    stdin.close()
-    resposta_ssh = stdout.readlines()
-    return resposta_ssh
-
 def windows(adress):     #FUNÇÃO PARA EXECUTAR A CONEXÃO E COMANDOS NAS MAQUINAS WINDOWS
     parametro=0
     parametro = 'paexec.exe \\\\'+adress+' -u MIXHC\\fernando -p @mix080117 wmic'
