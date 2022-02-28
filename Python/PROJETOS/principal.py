@@ -2,7 +2,7 @@ import os
 from time import sleep
 from sys import stderr, stdin, stdout
 from unittest import result
-import paramiko
+
 
 def myping(host):         #FUNÇÃO PARA PINGAR HOSTS E VERIFICAR SE ESTÃO ATIVOS NA REDE
     resposta_ping = (os.system('ping -n 1 ' +host ))
